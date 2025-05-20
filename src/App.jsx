@@ -16,6 +16,8 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import Homepage from "./components/main/Homepage";
 import Search from "./components/main/Search";
 
+import "./index.css";
+
 function App() {
   return (
     <>

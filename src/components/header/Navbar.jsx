@@ -15,8 +15,8 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <NavLink className="navbar-brand text-danger" to="/">
-            BoolFlix
+          <NavLink className="navbar-brand text-danger strong" to="/">
+            BOOLFLIX
           </NavLink>
           <button
             className="navbar-toggler"
@@ -48,7 +48,17 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Scopri
+                  Originali
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Aggiunti di recente
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  La mia lista
                 </a>
               </li>
             </ul>
