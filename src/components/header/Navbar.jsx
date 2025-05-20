@@ -9,7 +9,6 @@ const Navbar = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     navigate(`/search/${search}`);
-    setSearch("");
   };
 
   return (
