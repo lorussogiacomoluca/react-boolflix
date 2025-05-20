@@ -9,7 +9,9 @@ const DefaultLayout = () => {
         <Navbar />
       </header>
       <main>
-        <Outlet />
+        <div className="container mt-4">
+          <Outlet />
+        </div>
       </main>
       <footer></footer>
     </>
