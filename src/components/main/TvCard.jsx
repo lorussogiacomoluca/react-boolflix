@@ -1,5 +1,6 @@
 import React from "react";
 import FlagIcon from "./FlagIcon";
+import StarsRating from "./StarsRating";
 
 const TvCard = ({ tv }) => {
   return (
@@ -19,7 +20,7 @@ const TvCard = ({ tv }) => {
             <h5 className="card-title d-flex gap-3">{tv.original_name}</h5>
             <p className="card-text">{tv.name}</p>
             <FlagIcon cod={tv.original_language} />
-            <p className="card-text">Rating: {tv.vote_average}</p>
+            <StarsRating rating={tv.vote_average} />
           </div>
         </div>
         <a href="#" className="btn btn-danger m-2">
