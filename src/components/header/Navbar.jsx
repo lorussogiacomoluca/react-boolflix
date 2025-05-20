@@ -1,14 +1,24 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  //State Variable for getting text in the search input
   const [search, setSearch] = useState("");
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    navigate(`/search/${search}`);
+    setSearch("");
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand text-danger" href="#">
+          <NavLink className="navbar-brand text-danger" to="/">
             BoolFlix
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,9 +33,9 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -43,12 +53,14 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            <form className="d-flex" role="search" onSubmit={onSubmitHandler}>
               <input
                 className="form-control me-2 text-danger"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
               <button className="btn btn-outline-danger" type="submit">
                 Search
