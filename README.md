@@ -1,6 +1,6 @@
-#Esercizio 55 - BoolFlix
+# Esercizio 55 - BoolFlix
 
-# BoolFlix 🎬🍿
+## BoolFlix 🎬🍿
 
 BoolFlix è un'applicazione web ispirata a Netflix, sviluppata con React, che permette agli utenti di cercare film e serie TV utilizzando l'API di The Movie Database (TMDB).
 
@@ -40,21 +40,6 @@ BoolFlix è una piattaforma per la scoperta di film e serie TV che replica le fu
 - FontAwesome (per le icone)
 
 ---
-
-## 🚀 Installazione e Avvio
-
-1. Clona il repository
-
-   ```bash
-   git clone https://github.com/your-username/react-boolflix.git
-   cd react-boolflix
-   ```
-
-2. Installa le dipendenze
-
-   ```bash
-   npm install
-   ```
 
 3. Crea una chiave API TMDB
 
@@ -118,8 +103,3 @@ L’app utilizza i seguenti endpoint dell’API TMDB:
 - I codici lingua vengono convertiti in bandiere nazionali secondo lo standard ISO 639-1
 
 ---
-
-## ⚠️ Informazioni Mancanti
-
-Per alcuni campi, ad esempio negli screenshot, mancano informazioni dettagliate: queste sono riportate nel file PDF allegato.  
-Qualora manchino più di tre informazioni, si rimanda alla consultazione completa di tutti i PDF allegati.
