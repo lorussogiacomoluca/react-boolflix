@@ -13,6 +13,8 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Homepage />}></Route>
+            <Route path="/search" element={<Search />}></Route>
+            <Route path="/search/:text" element={<Search />}></Route>
           </Route>
         </Routes>
       </Router>

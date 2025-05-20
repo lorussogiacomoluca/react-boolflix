@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [search, setSearch] = useState("");
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
