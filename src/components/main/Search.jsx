@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import MovieCard from "./MovieCard";
 
 const Search = () => {
   const { text } = useParams();
@@ -37,11 +38,12 @@ const Search = () => {
   return (
     <div>
       <h1>Results for {text}</h1>
-      <ul>
-        {results.map((res) => (
-          <li key={res.id}>{res.original_title}</li>
+
+      <div className="row gap-4">
+        {results.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
