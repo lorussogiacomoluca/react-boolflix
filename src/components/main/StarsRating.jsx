@@ -5,7 +5,7 @@ const StarsRating = ({ rating }) => {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     if (i <= rating5) {
-      stars.push(<i key={i} className="fas fa-star text-warning"></i>);
+      stars.push(<i key={i} className="fas fa-star text-danger"></i>);
     } else {
       stars.push(<i key={i} className="far fa-star text-secondary"></i>);
     }

@@ -3,7 +3,7 @@ import FlagIcon from "./FlagIcon";
 import StarsRating from "./StarsRating";
 import { NavLink } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, upcoming }) => {
   return (
     <>
       <div
@@ -28,13 +28,17 @@ const MovieCard = ({ movie }) => {
             alt="..."
           />
           <div className="card-body">
-            <h5 className="card-title">{movie.original_title}</h5>
+            {!upcoming ? (
+              <h5 className="card-title">{movie.original_title}</h5>
+            ) : (
+              <h5 className="card-title">{movie.release_date}</h5>
+            )}
             <p className="card-text">{movie.title}</p>
             <FlagIcon cod={movie.original_language} />
             <StarsRating rating={movie.vote_average} />
           </div>
-          <NavLink to="/" className="btn btn-danger m-2">
-            Go somewhere
+          <NavLink to={`/film/${movie.id}`} className="btn btn-danger m-2">
+            Scopri
           </NavLink>
         </div>
       </div>

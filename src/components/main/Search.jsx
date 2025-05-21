@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import MovieCard from "./MovieCard";
 import TvCard from "./TvCard";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Search = () => {
   const { text } = useParams();
@@ -43,7 +44,7 @@ const Search = () => {
   }, [text]);
 
   return (
-    <div>
+    <div className="container mt-4">
       <h1>Results for {text}</h1>
 
       <div className="row results-row d-flex gap-4 my-4">
@@ -60,10 +61,14 @@ const Search = () => {
         <div className="row">
           <div className="col">
             <h3 className="text-muted">TV Series</h3>
-            <div className="d-flex gap-4 overflow-auto card-row">
-              {tvResults.map((tv) => (
-                <TvCard key={tv.id} tv={tv} />
-              ))}
+            <div className="row">
+              <div className="col">
+                <div className="d-flex gap-4 overflow-auto card-row">
+                  {tvResults.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

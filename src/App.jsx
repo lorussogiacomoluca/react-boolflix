@@ -17,6 +17,8 @@ import Homepage from "./components/main/Homepage";
 import Search from "./components/main/Search";
 
 import "./index.css";
+import MovieDetail from "./components/main/movieDetail";
+import SerieDetail from "./components/main/serieDetail";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/" element={<Homepage />}></Route>
             <Route path="/search" element={<Search />}></Route>
             <Route path="/search/:text" element={<Search />}></Route>
+            <Route path="/film/:id" element={<MovieDetail />}></Route>
+            <Route path="/serie/:id" element={<SerieDetail />}></Route>
           </Route>
         </Routes>
       </Router>

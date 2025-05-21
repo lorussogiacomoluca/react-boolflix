@@ -9,7 +9,7 @@ const FlagIcon = ({ cod }) => {
         code={cod !== "en" ? cod : "gb"}
         style={{ width: 32, height: 24 }}
         alt="Bandiera Italia"
-      />{" "}
+      />
     </div>
   );
 };

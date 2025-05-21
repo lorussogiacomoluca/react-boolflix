@@ -1,9 +1,13 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import fetchMovies from "./fetchMovies";
+import Slider from "./Slider";
+import UpComing from "./UpComing";
 
 const Homepage = () => {
   return (
     <div>
-      <h1>Homepage</h1>
+      <Slider />
+      <UpComing />
     </div>
   );
 };

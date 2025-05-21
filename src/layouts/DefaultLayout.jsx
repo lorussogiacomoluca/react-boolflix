@@ -9,7 +9,7 @@ const DefaultLayout = () => {
         <Navbar />
       </header>
       <main>
-        <div className="container mt-4">
+        <div className="overflow-hidden">
           <Outlet />
         </div>
       </main>

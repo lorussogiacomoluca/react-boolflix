@@ -38,7 +38,7 @@ const TvCard = ({ tv }) => {
             <FlagIcon cod={tv.original_language} />
             <StarsRating rating={tv.vote_average} />
           </div>
-          <NavLink to="/" className="btn btn-danger m-2">
+          <NavLink to={`/serie/${tv.id}`} className="btn btn-danger m-2">
             Go somewhere
           </NavLink>
         </div>

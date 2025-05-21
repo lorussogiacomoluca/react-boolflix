@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import Flag from "react-world-flags";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -62,19 +63,22 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search" onSubmit={onSubmitHandler}>
-              <input
-                className="form-control me-2 text-danger"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <button className="btn btn-outline-danger" type="submit">
-                Search
-              </button>
-            </form>
+            <div className="right d-flex align-items-center gap-4">
+              <Flag code="gb" style={{ width: 32, height: 24 }} />
+              <form className="d-flex" role="search" onSubmit={onSubmitHandler}>
+                <input
+                  className="form-control me-2 text-danger"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <button className="btn btn-outline-danger" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </nav>
