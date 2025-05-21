@@ -3,9 +3,10 @@ import fetchGenres from "../components/main/Utilities/fetchGenres";
 import discover from "../components/main/Utilities/discover";
 import MovieCard from "../components/main/Search/SearchMovies/MovieCard";
 import Pagination from "../components/main/Utilities/Pagination";
+import TvCard from "../components/main/Search/SearchSeries/TvCard";
 
-const Films = () => {
-  const type = "movie";
+const Series = () => {
+  const type = "tv";
   const [movieGenres, setMovieGenres] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -39,7 +40,6 @@ const Films = () => {
       setTotalPages(results.total_pages);
     });
   }, [selectedGenres]);
-
   return (
     <div className="container">
       <div className="row my-2">
@@ -79,8 +79,8 @@ const Films = () => {
       </div>
       <div className="row">
         <div className="col d-flex flex-wrap gap-3">
-          {discoverList.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} noShrink={true} />
+          {discoverList.map((tv) => (
+            <TvCard key={tv.id} tv={tv} noShrink={true} />
           ))}
         </div>
       </div>
@@ -95,4 +95,4 @@ const Films = () => {
   );
 };
 
-export default Films;
+export default Series;

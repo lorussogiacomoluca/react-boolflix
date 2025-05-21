@@ -21,6 +21,7 @@ import SerieDetail from "./components/main/Search/SearchSeries/SerieDetail";
 import FlagIcon from "./components/main/Utilities/FlagIcon";
 import Search from "./pages/Search";
 import Films from "./pages/Films";
+import Series from "./pages/Series";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/film/:id" element={<MovieDetail />}></Route>
             <Route path="/serie/:id" element={<SerieDetail />}></Route>
             <Route path="/films" element={<Films />}></Route>
+            <Route path="/series" element={<Series />}></Route>
           </Route>
         </Routes>
       </Router>

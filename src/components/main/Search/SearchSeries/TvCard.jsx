@@ -3,11 +3,11 @@ import FlagIcon from "../../Utilities/FlagIcon";
 import StarsRating from "../../Utilities/StarsRating";
 import { NavLink } from "react-router-dom";
 
-const TvCard = ({ tv }) => {
+const TvCard = ({ tv, noShrink = false }) => {
   return (
     <>
       <div
-        className="card card-item flex-shrink-0 mb-3"
+        className={`card card-item ${!noShrink ? "flex-shrink-0" : ""} mb-3`}
         style={{
           width: "300px",
           height: "450px",
