@@ -1,19 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import StarsRating from "./StarsRating";
+import StarsRating from "../../Utilities/StarsRating";
 import Flag from "react-world-flags";
-import FlagIcon from "./FlagIcon";
-import CastList from "./CastList";
+import FlagIcon from "../../Utilities/FlagIcon";
+import CastList from "../../Cast/CastList";
 const apiKey = import.meta.env.VITE_API_KEY;
 
-const SerieDetail = () => {
+const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({ genres: [], production_companies: [] });
   const [cast, setCast] = useState([]);
 
-  const fetchSerieInfo = () => {
-    const url = `https://api.themoviedb.org/3/tv/${id}?language=it-IT`;
+  const fetchMovieInfo = () => {
+    const url = `https://api.themoviedb.org/3/movie/${id}?language=it-IT`;
     const options = {
       headers: {
         accept: "application/json",
@@ -29,7 +29,7 @@ const SerieDetail = () => {
   };
 
   const fetchCredits = () => {
-    const url = `https://api.themoviedb.org/3/tv/${id}/credits?language=en-US
+    const url = `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US
 `;
     const options = {
       headers: {
@@ -46,10 +46,9 @@ const SerieDetail = () => {
   };
 
   useEffect(() => {
-    fetchSerieInfo();
+    fetchMovieInfo();
     fetchCredits();
   }, []);
-
   return (
     <div>
       <div className="slider-container">
@@ -64,7 +63,7 @@ const SerieDetail = () => {
       </div>
       <div className="container my-4">
         <div className="movie-info-header d-flex align-items-center gap-4">
-          <h1>{movie.name}</h1>
+          <h1>{movie.title}</h1>
           <div>
             <StarsRating rating={movie.vote_average} />
           </div>
@@ -106,4 +105,4 @@ const SerieDetail = () => {
   );
 };
 
-export default SerieDetail;
+export default MovieDetail;

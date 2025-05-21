@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "../Search/SearchMovies/MovieCard";
 import CastCard from "./CastCard";
 
 const CastList = ({ cast }) => {

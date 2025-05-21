@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import MovieCard from "./MovieCard";
-import TvCard from "./TvCard";
+import MovieCard from "../components/main/Search/SearchMovies/MovieCard";
+import TvCard from "../components/main/Search/SearchSeries/TvCard";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Search = () => {
@@ -26,7 +26,6 @@ const Search = () => {
         },
       })
       .then((response) => {
-        console.log(type, response.data.results);
         if (type === "movie") {
           setmovieResults(response.data.results);
         } else if (type === "tv") {

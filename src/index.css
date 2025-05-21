@@ -115,3 +115,7 @@ nav input.form-control:focus {
   height: 100%;
   object-fit: cover;
 }
+
+.pointer {
+  cursor: pointer;
+}

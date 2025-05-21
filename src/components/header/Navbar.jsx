@@ -38,9 +38,9 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" aria-current="page" to="/films">
                   Film
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -67,6 +67,7 @@ const Navbar = () => {
               <Flag code="gb" style={{ width: 32, height: 24 }} />
               <form className="d-flex" role="search" onSubmit={onSubmitHandler}>
                 <input
+                  required
                   className="form-control me-2 text-danger"
                   type="search"
                   placeholder="Search"

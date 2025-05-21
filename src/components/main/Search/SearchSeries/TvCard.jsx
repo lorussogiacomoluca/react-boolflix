@@ -1,6 +1,6 @@
 import React from "react";
-import FlagIcon from "./FlagIcon";
-import StarsRating from "./StarsRating";
+import FlagIcon from "../../Utilities/FlagIcon";
+import StarsRating from "../../Utilities/StarsRating";
 import { NavLink } from "react-router-dom";
 
 const TvCard = ({ tv }) => {
@@ -39,7 +39,7 @@ const TvCard = ({ tv }) => {
             <StarsRating rating={tv.vote_average} />
           </div>
           <NavLink to={`/serie/${tv.id}`} className="btn btn-danger m-2">
-            Go somewhere
+            Scopri
           </NavLink>
         </div>
       </div>

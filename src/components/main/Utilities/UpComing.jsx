@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { NavLink } from "react-router-dom";
 import fetchMovies from "./fetchMovies";
-import MovieCard from "./MovieCard";
+import MovieCard from "../Search/SearchMovies/MovieCard";
 
 const UpComing = () => {
   const [upcoming, setUpcoming] = useState([]);

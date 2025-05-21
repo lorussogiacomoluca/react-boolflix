@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 //Icons
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Flag from "react-world-flags";
+FlagIcon;
 
 //React Router Dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -13,12 +13,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 
 //Pages
-import Homepage from "./components/main/Homepage";
-import Search from "./components/main/Search";
+import Homepage from "./pages/Homepage";
 
 import "./index.css";
-import MovieDetail from "./components/main/movieDetail";
-import SerieDetail from "./components/main/serieDetail";
+import MovieDetail from "./components/main/Search/SearchMovies/MovieDetail";
+import SerieDetail from "./components/main/Search/SearchSeries/SerieDetail";
+import FlagIcon from "./components/main/Utilities/FlagIcon";
+import Search from "./pages/Search";
+import Films from "./pages/Films";
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
             <Route path="/search/:text" element={<Search />}></Route>
             <Route path="/film/:id" element={<MovieDetail />}></Route>
             <Route path="/serie/:id" element={<SerieDetail />}></Route>
+            <Route path="/films" element={<Films />}></Route>
           </Route>
         </Routes>
       </Router>
