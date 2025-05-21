@@ -11,7 +11,6 @@ const UpComing = () => {
       setUpcoming(response.data.results);
     });
   }, []);
-  console.log(upcoming);
   return (
     <>
       <div className="container mt-4">

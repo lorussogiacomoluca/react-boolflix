@@ -10,7 +10,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({ genres: [], production_companies: [] });
-  const [cast, setCast] = useState({});
+  const [cast, setCast] = useState([]);
 
   const fetchMovieInfo = () => {
     const url = `https://api.themoviedb.org/3/movie/${id}?language=it-IT`;
@@ -49,7 +49,6 @@ const MovieDetail = () => {
     fetchMovieInfo();
     fetchCredits();
   }, []);
-  console.log(cast);
   return (
     <div>
       <div className="slider-container">
@@ -90,7 +89,7 @@ const MovieDetail = () => {
         </p>
 
         <CastList cast={cast} />
-
+        <h3 className="my-4">Produced by:</h3>
         <div className="companies d-flex align-items-center justify-content-between">
           {movie.production_companies.map((company) => (
             <img

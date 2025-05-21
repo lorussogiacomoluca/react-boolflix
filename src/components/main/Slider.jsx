@@ -9,7 +9,7 @@ const Slider = () => {
   useEffect(() => {
     fetchMovies()
       .then((response) => {
-        setTopFive(response.data.results.slice(0, 5));
+        setTopFive(response.data.results.slice(0, 15));
       })
       .catch((error) => {
         console.error("Errore durante il fetch:", error);
@@ -38,7 +38,7 @@ const Slider = () => {
           <div className="slider-info d-none d-md-block ms-3">
             <h2>{topFive[slide].title}</h2>
             <p className="availability-tag">Disponibile ora!</p>
-            <NavLink to="/film:{topFive.[slide]/id}">
+            <NavLink to={`/film/${topFive[slide].id}`}>
               <div className="btn btn-secondary ">
                 <i className="fa-solid fa-play"></i> Guarda
               </div>
