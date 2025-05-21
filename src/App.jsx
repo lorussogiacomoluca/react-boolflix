@@ -22,6 +22,7 @@ import FlagIcon from "./components/main/Utilities/FlagIcon";
 import Search from "./pages/Search";
 import Films from "./pages/Films";
 import Series from "./pages/Series";
+import Actor from "./pages/Actor";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/serie/:id" element={<SerieDetail />}></Route>
             <Route path="/films" element={<Films />}></Route>
             <Route path="/series" element={<Series />}></Route>
+            <Route path="/actor/:id" element={<Actor />}></Route>
           </Route>
         </Routes>
       </Router>
