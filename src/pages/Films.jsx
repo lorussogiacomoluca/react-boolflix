@@ -3,14 +3,18 @@ import fetchGenres from "../components/main/Utilities/fetchGenres";
 import discover from "../components/main/Utilities/discover";
 import MovieCard from "../components/main/Search/SearchMovies/MovieCard";
 import Pagination from "../components/main/Utilities/Pagination";
+import fetchProviders from "../components/main/Utilities/fetchProviders";
 
 const Films = () => {
   const type = "movie";
   const [movieGenres, setMovieGenres] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [totalResults, setTotalResults] = useState(1);
   const [discoverList, setDiscoverList] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
+  const [providersList, setProvidersList] = useState([]);
+  const [selectedProvider, setSelectedProvider] = useState();
 
   const toggleGenre = (id) => {
     setSelectedGenres((prev) =>
@@ -24,21 +28,18 @@ const Films = () => {
     fetchGenres(type).then((genres) => {
       setMovieGenres(genres);
     });
+    fetchProviders(type).then((providers) => {
+      setProvidersList(providers);
+    });
   }, []);
 
   useEffect(() => {
-    discover(type, page).then((results) => {
+    discover(type, page, genreQuery, selectedProvider).then((results) => {
       setDiscoverList(results.results);
       setTotalPages(results.total_pages);
+      setTotalResults(results.total_results);
     });
-  }, [page]);
-
-  useEffect(() => {
-    discover(type, page, genreQuery).then((results) => {
-      setDiscoverList(results.results);
-      setTotalPages(results.total_pages);
-    });
-  }, [selectedGenres]);
+  }, [page, selectedGenres, selectedProvider]);
 
   return (
     <div className="container">
@@ -54,8 +55,8 @@ const Films = () => {
         </div>
       </div>
 
-      <div className="row">
-        <div className="col">
+      <div className="row d-flex">
+        <div className="col ">
           <div className="genres-list">
             {movieGenres.map((genre) => (
               <span
@@ -72,10 +73,27 @@ const Films = () => {
             ))}
           </div>
         </div>
+        <div className="providers-list col-4">
+          <select
+            className="form-select"
+            aria-label="Default select example"
+            onChange={(e) => {
+              setSelectedProvider(e.target.value);
+              setPage(1);
+            }}
+          >
+            <option value=" ">Tutte le piattaforme</option>
+            {providersList.map((provider) => (
+              <option value={provider.provider_id} key={provider.provider_id}>
+                {provider.provider_name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="row">
-        <div className="col my-4">Discover:</div>
+        <div className="col my-4">Scopri altri {totalResults} films</div>
       </div>
       <div className="row">
         <div className="col d-flex flex-wrap gap-3">

@@ -10,6 +10,7 @@ const Series = () => {
   const [movieGenres, setMovieGenres] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [totalResults, setTotalResults] = useState(1);
   const [discoverList, setDiscoverList] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
 
@@ -28,18 +29,12 @@ const Series = () => {
   }, []);
 
   useEffect(() => {
-    discover(type, page).then((results) => {
-      setDiscoverList(results.results);
-      setTotalPages(results.total_pages);
-    });
-  }, [page]);
-
-  useEffect(() => {
     discover(type, page, genreQuery).then((results) => {
       setDiscoverList(results.results);
       setTotalPages(results.total_pages);
+      setTotalResults(results.total_results);
     });
-  }, [selectedGenres]);
+  }, [page, selectedGenres]);
   return (
     <div className="container">
       <div className="row my-2">
@@ -75,7 +70,7 @@ const Series = () => {
       </div>
 
       <div className="row">
-        <div className="col my-4">Discover:</div>
+        <div className="col my-4">Scopri altre {totalResults} serie tv</div>
       </div>
       <div className="row">
         <div className="col d-flex flex-wrap gap-3">

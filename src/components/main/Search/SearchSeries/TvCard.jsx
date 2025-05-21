@@ -34,7 +34,8 @@ const TvCard = ({ tv, noShrink = false }) => {
           />
           <div className="card-body">
             <h5 className="card-title">{tv.original_name}</h5>
-            <p className="card-text">{tv.name}</p>
+            <p>Numero di stagioni: {tv.number_of_seasons}</p>
+            <p className="card-text text-truncate">{tv.name}</p>
             <FlagIcon cod={tv.original_language} />
             <StarsRating rating={tv.vote_average} />
           </div>

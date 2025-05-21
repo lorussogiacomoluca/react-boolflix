@@ -29,7 +29,9 @@ const MovieCard = ({ movie, upcoming, noShrink = false }) => {
           />
           <div className="card-body">
             {!upcoming ? (
-              <h5 className="card-title">{movie.original_title}</h5>
+              <h5 className="card-title text-truncate">
+                {movie.original_title}
+              </h5>
             ) : (
               <h5 className="card-title">{movie.release_date}</h5>
             )}

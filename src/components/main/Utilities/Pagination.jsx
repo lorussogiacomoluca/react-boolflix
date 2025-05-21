@@ -19,7 +19,7 @@ const Pagination = ({ page, setPage, totalPages, setTotalPages }) => {
           onClick={() => {
             setPage((p) => p + 1);
           }}
-          disabled={page >= { totalPages }}
+          disabled={page >= totalPages}
         >
           Avanti
         </button>
